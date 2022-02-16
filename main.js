@@ -53,7 +53,7 @@ const saveClient = () => {
             itemnf: document.getElementById('itemnf').value,
             produto: document.getElementById('produto').value,
         }
-        const index = document.getElementById('client').dataset.index
+        const index = document.getElementById('nome').dataset.index
         if (index == 'new') {
             createClient(client)
             updateTable()
