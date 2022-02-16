@@ -9,7 +9,7 @@ const closeModal = () => {
 }
 
 
-const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client'))
+const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? []
 const setLocalStorage = (dbClient) => localStorage.setItem("dbClient", JSON.stringify(dbClient))
 
 // CRUD - create read update delete
