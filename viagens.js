@@ -9,28 +9,28 @@ const closeModal = () => {
 }
 
 
-const getLocalStorage = () => JSON.parse(localStorage.getItem('db_client')) ?? []
-const setLocalStorage = (dbClient) => localStorage.setItem("db_client", JSON.stringify(dbClient))
+const getLocalStorage = () => JSON.parse(localStorage.getItem('db_viagem')) ?? []
+const setLocalStorage = (dbViagem) => localStorage.setItem("db_viagem", JSON.stringify(dbViagem))
 
 // CRUD - create read update delete
 const deleteClient = (index) => {
-    const dbClient = readClient()
-    dbClient.splice(index, 1)
-    setLocalStorage(dbClient)
+    const dbViagem = readClient()
+    dbViagem.splice(index, 1)
+    setLocalStorage(dbViagem)
 }
 
 const updateClient = (index, client) => {
-    const dbClient = readClient()
-    dbClient[index] = client
-    setLocalStorage(dbClient)
+    const dbViagem = readClient()
+    dbViagem[index] = client
+    setLocalStorage(dbViagem)
 }
 
 const readClient = () => getLocalStorage()
 
 const createClient = (client) => {
-    const dbClient = getLocalStorage()
-    dbClient.push(client)
-    setLocalStorage(dbClient)
+    const dbViagem = getLocalStorage()
+    dbViagem.push(client)
+    setLocalStorage(dbViagem)
 }
 
 const isValidFields = () => {
@@ -49,8 +49,8 @@ const saveClient = () => {
     if (isValidFields()) {
         const client = {
             nome: document.getElementById('nome').value,
-            caminhao: document.getElementById('caminhao').value,
-            endereco: document.getElementById('endereco').value,
+            entrega: document.getElementById('entrega').value,
+            saida: document.getElementById('saida').value,
         }
         const index = document.getElementById('nome').dataset.index
         if (index == 'new') {
@@ -69,8 +69,8 @@ const createRow = (client, index) => {
     const newRow = document.createElement('tr')
     newRow.innerHTML = `
         <td>${client.nome}</td>
-        <td>${client.caminhao}</td>
-        <td>${client.endereco}</td>
+        <td>${client.entrega}</td>
+        <td>${client.saida}</td>
         <td>
             <button type="button" class="button green" id="edit-${index}">Editar</button>
             <button type="button" class="button red" id="delete-${index}" >Excluir</button>
@@ -85,15 +85,15 @@ const clearTable = () => {
 }
 
 const updateTable = () => {
-    const dbClient = readClient()
+    const dbViagem = readClient()
     clearTable()
-    dbClient.forEach(createRow)
+    dbViagem.forEach(createRow)
 }
 
 const fillFields = (client) => {
     document.getElementById('nome').value = client.nome
-    document.getElementById('caminhao').value = client.caminhao
-    document.getElementById('endereco').value = client.endereco
+    document.getElementById('entrega').value = client.entrega
+    document.getElementById('saida').value = client.saida
     document.getElementById('nome').dataset.index = client.index
 }
 

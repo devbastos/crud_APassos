@@ -5,7 +5,7 @@
 }
 
 :root {
-    --primary-color: #0099ff;
+    --primary-color: #183765;
     --secundary-color: #FFF1CC;
     --shadow-color: #CCC;
     --text-color: #FFF;
@@ -20,7 +20,7 @@ body {
 }
 
 header {
-    background-color: var(--primary-color);
+    background-color: #fff;
     height: 70px;
     text-align: center;
     line-height: 70px;
@@ -28,8 +28,9 @@ header {
 }
 
 .header-title {
-    color: black;
-    font-size: 2rem;
+    color: rgb(0, 0, 0);
+    font-size: 2.5rem;
+    margin-top: -5rem;
 }
 
 main {

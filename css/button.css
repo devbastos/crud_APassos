@@ -10,11 +10,17 @@
 }
 
 .button.blue {
-    background-color: #17b82d;
+    background-color: var(--primary-color);
+}
+
+#cadastrarCliente {
+    margin-top: -3.8rem;
+    margin-left: 6rem;
+
 }
 
 button.green {
-    background-color: #0099ff;
+    background-color: var(--primary-color);
 }
 
 button.red {
@@ -24,6 +30,9 @@ button.red {
 .button:hover {
     box-shadow: inset 200px 0 0 #00000055;
 }
+
+
+
 
 @media(max-width:480px) {
     .button.mobile {

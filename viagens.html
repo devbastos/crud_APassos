@@ -12,25 +12,25 @@
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/imagens.css">
     <link rel="stylesheet" href="css/modal.css">
-    <script src="main.js" defer></script>
-    <title>Motoristas</title>
+    <script src="viagens.js" defer></script>
+    <title>Viagens</title>
 </head>
 
 <body>
     <header>
         <img src="/imagens/Logo-SIMPAR-2020-2.png" alt="SIMPAR" class="logo">
-        <h1 class="header-title">Cadastro de Motorista</h1>
+        <h1 class="header-title">Cadastro de Viagens</h1>
     </header>
     <main>
-            <a href="/viagens.html"><button type="button" class="button blue mobile" id="cadastrarViagens"> Viagens </button></a>
-             <button type="button" class="button red mobile" id="cadastrarCliente">Cadastrar Motorista</button>
+            <a href="/index.html"><button type="button" class="button blue mobile" id="cadastrarViagens" > Motoristas </button></a>
+             <button type="button" class="button red mobile" id="cadastrarCliente" style="margin-left:7rem;">Cadastrar Viagem</button>
         
              <table id="tableClient" class="records">
             <thead>
                 <tr>
-                    <th>Nome</th>
-                    <th>Caminhão</th>
-                    <th>Endereço</th>
+                    <th>Data da Viagem/hora</th>
+                    <th>Local de Entrega</th>
+                    <th>Local de Saída</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -41,13 +41,13 @@
         <div class="modal" id="modal">
             <div class="modal-content">
                 <header class="modal-header">
-                    <h2>Novo Motorista</h2>
+                    <h2>Nova Viagem</h2>
                     <span class="modal-close" id="modalClose">&#10006;</span>
                 </header>
                 <form id="form" class="modal-form">
-                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="Nome" required>
-                    <input type="text" id="caminhao" class="modal-field" placeholder="Caminhão (marca,modelo, placa e eixos" required>
-                    <input type="text" id="endereco" class="modal-field" placeholder="Endereço" required>
+                    <input type="text" id="nome" data-index="new" class="modal-field" placeholder="data/hora ex:(13/03/2001 21:35pm)" required>
+                    <input type="text" id="entrega" class="modal-field" placeholder="Local de entrega ex:(Sao Paulo)" required>
+                    <input type="text" id="saida" class="modal-field" placeholder="Local de Saida ex:(Rio de Janeiro)" required>
                 </form>
                 <footer class="modal-footer">
                     <button id="salvar" class="button green">Salvar</button>
